@@ -1,34 +1,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainroot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.BookDetailActivity">
 
-    <include
-        layout = "@layout/toolbar_main"
-        />
+    <include layout="@layout/toolbar_main" />
 
-    <ImageView
-        android:id="@+id/ivBookCover"
-        android:layout_marginTop="8dp"
-        android:layout_width="280dp"
-        android:layout_height="280dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32sp"
-        android:layout_marginTop="8dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        <ImageView
+            android:id="@+id/ivBookCover"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/tvAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivBookCover"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="43dp"
+            android:textSize="32sp"
+            tools:text="Tittle" />
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:textSize="22sp"
+            tools:text="author" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>
