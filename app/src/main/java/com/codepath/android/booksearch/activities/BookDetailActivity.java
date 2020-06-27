@@ -1,6 +1,8 @@
 package com.codepath.android.booksearch.activities;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,6 +43,15 @@ public class BookDetailActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(imageuRL)
                 .into(ivBookCover);
+
+        modifyActionBar(book.getTitle());
+    }
+
+    private void modifyActionBar(String title) {
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+
     }
 
 
