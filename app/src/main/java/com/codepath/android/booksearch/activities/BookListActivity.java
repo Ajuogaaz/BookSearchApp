@@ -1,5 +1,6 @@
 package com.codepath.android.booksearch.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -70,10 +71,19 @@ public class BookListActivity extends AppCompatActivity {
                 new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                        Toast.makeText(
-                                BookListActivity.this,
-                                "An item at position " + position + " clicked!",
-                                Toast.LENGTH_SHORT).show();
+                        Log.d("BookListActivity", "We clicked position "+ position);
+
+                        if (position != RecyclerView.NO_POSITION){
+                            Book  book = abooks.get(position);
+                            Intent i = new Intent (BookListActivity.this, BookDetailActivity.class);
+
+
+                        }
+
+
+
+
+
                     }
                 }
         );
