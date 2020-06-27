@@ -48,7 +48,8 @@ public class BookListActivity extends AppCompatActivity {
 
         // Initialize the adapter
         bookAdapter = new BookAdapter(this, abooks);
-        bookAdapter.setOnItemClickListener(new BookAdapter.OnItemClickListener() {
+
+        /*bookAdapter.setOnItemClickListener(new BookAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
                 Toast.makeText(
@@ -62,6 +63,20 @@ public class BookListActivity extends AppCompatActivity {
                 // Pass the book into details activity using extras
             }
         });
+        */
+
+
+        ItemClickSupport.addTo(rvBooks).setOnItemClickListener(
+                new ItemClickSupport.OnItemClickListener() {
+                    @Override
+                    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                        Toast.makeText(
+                                BookListActivity.this,
+                                "An item at position " + position + " clicked!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
 
         // Attach the adapter to the RecyclerView
         rvBooks.setAdapter(bookAdapter);
