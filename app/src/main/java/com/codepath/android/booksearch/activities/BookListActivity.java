@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.widget.SearchView;
 
@@ -40,6 +41,7 @@ public class BookListActivity extends AppCompatActivity {
     private BookAdapter bookAdapter;
     private BookClient client;
     private ArrayList<Book> abooks;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,10 @@ public class BookListActivity extends AppCompatActivity {
 
         // Initialize the adapter
         bookAdapter = new BookAdapter(this, abooks);
+
+        toolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
 
         /*bookAdapter.setOnItemClickListener(new BookAdapter.OnItemClickListener() {
             @Override
