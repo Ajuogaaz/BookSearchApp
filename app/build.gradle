@@ -33,6 +33,7 @@ dependencies {
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
 
 
     annotationProcessor "androidx.annotation:annotation:$annotationProcessorVersion"
