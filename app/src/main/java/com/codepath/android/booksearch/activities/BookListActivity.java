@@ -70,7 +70,7 @@ public class BookListActivity extends AppCompatActivity {
         rvBooks.setLayoutManager(new LinearLayoutManager(this));
 
         // Fetch the data remotely
-        fetchBooks("Oscar Wilde");
+
     }
 
     // Executes an API call to the OpenLibrary search endpoint, parses the results
@@ -156,6 +156,11 @@ public class BookListActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+
+                if (!(query.isEmpty())){
+                    fetchBooks(query);
+                }
+
                 // perform query here
 
                 // workaround to avoid issues with some emulators and keyboard devices firing twice if a keyboard enter is used
