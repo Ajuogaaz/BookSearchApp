@@ -3,6 +3,7 @@ package com.codepath.android.booksearch.activities;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,6 +28,7 @@ import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -76,6 +78,10 @@ public class BookListActivity extends AppCompatActivity {
                         if (position != RecyclerView.NO_POSITION){
                             Book  book = abooks.get(position);
                             Intent i = new Intent (BookListActivity.this, BookDetailActivity.class);
+
+                            i.putExtra(Book.class.getSimpleName(), Parcels.wrap(book));
+
+                            startActivity(i);
 
 
                         }
