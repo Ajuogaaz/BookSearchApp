@@ -43,6 +43,7 @@ public class BookDetailActivity extends AppCompatActivity {
     Intent shareIntent;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class BookDetailActivity extends AppCompatActivity {
         ivBookCover = findViewById(R.id.ivBookCover);
         tvTitle = findViewById(R.id.tvTitle);
         tvAuthor = findViewById(R.id.tvAuthor);
+
 
         toolbar = findViewById(R.id.toolbar);
 
@@ -79,6 +81,7 @@ public class BookDetailActivity extends AppCompatActivity {
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+
                         return false;
                     }
                 }).into(ivBookCover);
