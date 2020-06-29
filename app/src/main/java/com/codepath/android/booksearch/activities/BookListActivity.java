@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
@@ -178,14 +179,19 @@ public class BookListActivity extends AppCompatActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu){
 
+
         miActionProgressItem = menu.findItem(R.id.miActionProgress);
+        //ProgressBar v =  (ProgressBar) MenuItemCompat.getActionView(miActionProgressItem);
 
         return super.onPrepareOptionsMenu(menu);
     }
 
     public void showProgressBar() {
         // Show progress item
-        miActionProgressItem.setVisible(true);
+
+        if (miActionProgressItem != null) {
+            miActionProgressItem.setVisible(true);
+        }
     }
 
     public void hideProgressBar() {
@@ -196,7 +202,10 @@ public class BookListActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.menu_book_list, menu);
+
+        
+
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 

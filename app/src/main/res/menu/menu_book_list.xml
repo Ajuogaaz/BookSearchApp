@@ -2,6 +2,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".BookSearchActivity">
 
+    <item android:id="@+id/action_search"
+        android:orderInCategory="5"
+        android:title="Search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    android:orderInCategory="100" app:showAsAction="never" />
+
+
+
     <item
         android:id="@+id/miActionProgress"
         android:title="Loading..."
@@ -9,9 +22,6 @@
         android:orderInCategory="100"
         app:showAsAction="always"
         app:actionLayout="@layout/action_view_progress" />
-
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-    android:orderInCategory="100" app:showAsAction="never" />
 </menu>
 
 
